@@ -8,23 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Disc
+namespace DiscUI
 {
-    public partial class DiscForm : Form
+    public partial class MainForm : Form
     {
-        public DiscForm()
+        public MainForm()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
