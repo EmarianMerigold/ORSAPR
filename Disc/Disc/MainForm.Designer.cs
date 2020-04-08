@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Close_button = new System.Windows.Forms.Button();
+            this.Start_button = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Angle_textBox = new System.Windows.Forms.TextBox();
+            this.DepthCut_textBox = new System.Windows.Forms.TextBox();
+            this.CentralCut_textBox = new System.Windows.Forms.TextBox();
+            this.InsideDiameter_textBox = new System.Windows.Forms.TextBox();
+            this.Width_textBox = new System.Windows.Forms.TextBox();
+            this.MainDiameter_textBox = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -51,15 +51,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.Build_button = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.Close_button);
+            this.groupBox1.Controls.Add(this.Start_button);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(371, 63);
@@ -67,23 +67,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Компас 3D";
             // 
-            // button2
+            // Close_button
             // 
-            this.button2.Location = new System.Drawing.Point(212, 19);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(131, 30);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Закрыть Компас 3D";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Close_button.Location = new System.Drawing.Point(212, 19);
+            this.Close_button.Name = "Close_button";
+            this.Close_button.Size = new System.Drawing.Size(131, 30);
+            this.Close_button.TabIndex = 16;
+            this.Close_button.Text = "Закрыть Компас 3D";
+            this.Close_button.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // Start_button
             // 
-            this.button1.Location = new System.Drawing.Point(29, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 30);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Открыть Компас 3D";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Start_button.Location = new System.Drawing.Point(29, 19);
+            this.Start_button.Name = "Start_button";
+            this.Start_button.Size = new System.Drawing.Size(131, 30);
+            this.Start_button.TabIndex = 15;
+            this.Start_button.Text = "Открыть Компас 3D";
+            this.Start_button.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -96,12 +96,12 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox6);
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.Angle_textBox);
+            this.groupBox2.Controls.Add(this.DepthCut_textBox);
+            this.groupBox2.Controls.Add(this.CentralCut_textBox);
+            this.groupBox2.Controls.Add(this.InsideDiameter_textBox);
+            this.groupBox2.Controls.Add(this.Width_textBox);
+            this.groupBox2.Controls.Add(this.MainDiameter_textBox);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label12);
@@ -121,47 +121,47 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ввод параметров";
             // 
-            // textBox6
+            // Angle_textBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(143, 199);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 29;
+            this.Angle_textBox.Location = new System.Drawing.Point(143, 199);
+            this.Angle_textBox.Name = "Angle_textBox";
+            this.Angle_textBox.Size = new System.Drawing.Size(100, 20);
+            this.Angle_textBox.TabIndex = 29;
             // 
-            // textBox5
+            // DepthCut_textBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(143, 164);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 28;
+            this.DepthCut_textBox.Location = new System.Drawing.Point(143, 164);
+            this.DepthCut_textBox.Name = "DepthCut_textBox";
+            this.DepthCut_textBox.Size = new System.Drawing.Size(100, 20);
+            this.DepthCut_textBox.TabIndex = 28;
             // 
-            // textBox4
+            // CentralCut_textBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(143, 129);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 27;
+            this.CentralCut_textBox.Location = new System.Drawing.Point(143, 129);
+            this.CentralCut_textBox.Name = "CentralCut_textBox";
+            this.CentralCut_textBox.Size = new System.Drawing.Size(100, 20);
+            this.CentralCut_textBox.TabIndex = 27;
             // 
-            // textBox3
+            // InsideDiameter_textBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(143, 94);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 26;
+            this.InsideDiameter_textBox.Location = new System.Drawing.Point(143, 94);
+            this.InsideDiameter_textBox.Name = "InsideDiameter_textBox";
+            this.InsideDiameter_textBox.Size = new System.Drawing.Size(100, 20);
+            this.InsideDiameter_textBox.TabIndex = 26;
             // 
-            // textBox2
+            // Width_textBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(143, 59);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 25;
+            this.Width_textBox.Location = new System.Drawing.Point(143, 59);
+            this.Width_textBox.Name = "Width_textBox";
+            this.Width_textBox.Size = new System.Drawing.Size(100, 20);
+            this.Width_textBox.TabIndex = 25;
             // 
-            // textBox1
+            // MainDiameter_textBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(143, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 24;
+            this.MainDiameter_textBox.Location = new System.Drawing.Point(143, 23);
+            this.MainDiameter_textBox.Name = "MainDiameter_textBox";
+            this.MainDiameter_textBox.Size = new System.Drawing.Size(100, 20);
+            this.MainDiameter_textBox.TabIndex = 24;
             // 
             // label14
             // 
@@ -271,14 +271,14 @@
             this.label3.TabIndex = 13;
             this.label3.Text = "Внешний диаметр D";
             // 
-            // button3
+            // Build_button
             // 
-            this.button3.Location = new System.Drawing.Point(91, 381);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(219, 41);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "Построить";
-            this.button3.UseVisualStyleBackColor = true;
+            this.Build_button.Location = new System.Drawing.Point(91, 381);
+            this.Build_button.Name = "Build_button";
+            this.Build_button.Size = new System.Drawing.Size(219, 41);
+            this.Build_button.TabIndex = 20;
+            this.Build_button.Text = "Построить";
+            this.Build_button.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -288,7 +288,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.Build_button);
             this.Name = "MainForm";
             this.Text = "Построитель";
             this.groupBox1.ResumeLayout(false);
@@ -302,16 +302,16 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Close_button;
+        private System.Windows.Forms.Button Start_button;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Angle_textBox;
+        private System.Windows.Forms.TextBox DepthCut_textBox;
+        private System.Windows.Forms.TextBox CentralCut_textBox;
+        private System.Windows.Forms.TextBox InsideDiameter_textBox;
+        private System.Windows.Forms.TextBox Width_textBox;
+        private System.Windows.Forms.TextBox MainDiameter_textBox;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
@@ -324,7 +324,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button Build_button;
     }
 }
 

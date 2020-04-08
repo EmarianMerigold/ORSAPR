@@ -15,6 +15,18 @@ namespace Disc
         public MainForm()
         {
             InitializeComponent();
+            AutoFill();
         }
+
+        private void AutoFill()
+        {
+            MainDiameter_textBox.Text = "137";
+            Width_textBox.Text = "26";
+            InsideDiameter_textBox.Text = "26";
+            CentralCut_textBox.Text = "80";
+            DepthCut_textBox.Text = "5";
+            Angle_textBox.Text = "1";
+        }
+
     }
 }
