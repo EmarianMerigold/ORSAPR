@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
-// связанные со сборкой.
+// связанных со сборкой.
 [assembly: AssemblyTitle("Disc")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
@@ -16,11 +16,11 @@ using System.Runtime.InteropServices;
 
 // Установка значения False для параметра ComVisible делает типы в этой сборке невидимыми
 // для компонентов COM. Если необходимо обратиться к типу в этой сборке через
-// COM, задайте атрибуту ComVisible значение TRUE для этого типа.
+// COM, следует установить атрибут ComVisible в TRUE для этого типа.
 [assembly: ComVisible(false)]
 
 // Следующий GUID служит для идентификации библиотеки типов, если этот проект будет видимым для COM
-[assembly: Guid("c3a6d82c-386a-4419-9df0-9cef2d6b2dfa")]
+[assembly: Guid("4d58f45a-c876-4e9b-b09b-0beac091d4df")]
 
 // Сведения о версии сборки состоят из указанных ниже четырех значений:
 //
