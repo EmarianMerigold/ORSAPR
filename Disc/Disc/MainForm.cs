@@ -138,5 +138,13 @@ namespace Disc
             //Builder builder = new Builder();
             //builder.Build(kompasConnector.iPart, kompasConnector.kompas, discParams);
         }
+        private void Textbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && number != 8 && number != 44) //цифры, клавиша BackSpace и запятая в ASCII
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

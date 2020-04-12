@@ -141,6 +141,7 @@
             this.AngleTextBox.Size = new System.Drawing.Size(100, 20);
             this.AngleTextBox.TabIndex = 29;
             this.AngleTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
+            this.AngleTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Textbox_KeyPress);
             // 
             // DepthCutTextBox
             // 
@@ -149,6 +150,7 @@
             this.DepthCutTextBox.Size = new System.Drawing.Size(100, 20);
             this.DepthCutTextBox.TabIndex = 28;
             this.DepthCutTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
+            this.DepthCutTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Textbox_KeyPress);
             // 
             // CentralCutTextBox
             // 
@@ -157,6 +159,7 @@
             this.CentralCutTextBox.Size = new System.Drawing.Size(100, 20);
             this.CentralCutTextBox.TabIndex = 27;
             this.CentralCutTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
+            this.CentralCutTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Textbox_KeyPress);
             // 
             // InsideDiameterTextBox
             // 
@@ -165,6 +168,7 @@
             this.InsideDiameterTextBox.Size = new System.Drawing.Size(100, 20);
             this.InsideDiameterTextBox.TabIndex = 26;
             this.InsideDiameterTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
+            this.InsideDiameterTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Textbox_KeyPress);
             // 
             // WidthTextBox
             // 
@@ -173,6 +177,7 @@
             this.WidthTextBox.Size = new System.Drawing.Size(100, 20);
             this.WidthTextBox.TabIndex = 25;
             this.WidthTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
+            this.WidthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Textbox_KeyPress);
             // 
             // MainDiameterTextBox
             // 
@@ -181,6 +186,7 @@
             this.MainDiameterTextBox.Size = new System.Drawing.Size(100, 20);
             this.MainDiameterTextBox.TabIndex = 24;
             this.MainDiameterTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
+            this.MainDiameterTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Textbox_KeyPress);
             // 
             // label14
             // 
