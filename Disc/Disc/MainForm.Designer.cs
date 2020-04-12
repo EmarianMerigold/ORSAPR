@@ -33,12 +33,12 @@
             this.Start_button = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.Angle_textBox = new System.Windows.Forms.TextBox();
-            this.DepthCut_textBox = new System.Windows.Forms.TextBox();
-            this.CentralCut_textBox = new System.Windows.Forms.TextBox();
-            this.InsideDiameter_textBox = new System.Windows.Forms.TextBox();
-            this.Width_textBox = new System.Windows.Forms.TextBox();
-            this.MainDiameter_textBox = new System.Windows.Forms.TextBox();
+            this.AngleTextBox = new System.Windows.Forms.TextBox();
+            this.DepthCutTextBox = new System.Windows.Forms.TextBox();
+            this.CentralCutTextBox = new System.Windows.Forms.TextBox();
+            this.InsideDiameterTextBox = new System.Windows.Forms.TextBox();
+            this.WidthTextBox = new System.Windows.Forms.TextBox();
+            this.MainDiameterTextBox = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -51,7 +51,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.Build_button = new System.Windows.Forms.Button();
+            this.BuildButton = new System.Windows.Forms.Button();
+            this.WarningLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -96,12 +97,13 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.Angle_textBox);
-            this.groupBox2.Controls.Add(this.DepthCut_textBox);
-            this.groupBox2.Controls.Add(this.CentralCut_textBox);
-            this.groupBox2.Controls.Add(this.InsideDiameter_textBox);
-            this.groupBox2.Controls.Add(this.Width_textBox);
-            this.groupBox2.Controls.Add(this.MainDiameter_textBox);
+            this.groupBox2.Controls.Add(this.WarningLabel);
+            this.groupBox2.Controls.Add(this.AngleTextBox);
+            this.groupBox2.Controls.Add(this.DepthCutTextBox);
+            this.groupBox2.Controls.Add(this.CentralCutTextBox);
+            this.groupBox2.Controls.Add(this.InsideDiameterTextBox);
+            this.groupBox2.Controls.Add(this.WidthTextBox);
+            this.groupBox2.Controls.Add(this.MainDiameterTextBox);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label12);
@@ -116,52 +118,52 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Location = new System.Drawing.Point(12, 127);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(371, 248);
+            this.groupBox2.Size = new System.Drawing.Size(371, 264);
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ввод параметров";
             // 
-            // Angle_textBox
+            // AngleTextBox
             // 
-            this.Angle_textBox.Location = new System.Drawing.Point(143, 199);
-            this.Angle_textBox.Name = "Angle_textBox";
-            this.Angle_textBox.Size = new System.Drawing.Size(100, 20);
-            this.Angle_textBox.TabIndex = 29;
+            this.AngleTextBox.Location = new System.Drawing.Point(143, 199);
+            this.AngleTextBox.Name = "AngleTextBox";
+            this.AngleTextBox.Size = new System.Drawing.Size(100, 20);
+            this.AngleTextBox.TabIndex = 29;
             // 
-            // DepthCut_textBox
+            // DepthCutTextBox
             // 
-            this.DepthCut_textBox.Location = new System.Drawing.Point(143, 164);
-            this.DepthCut_textBox.Name = "DepthCut_textBox";
-            this.DepthCut_textBox.Size = new System.Drawing.Size(100, 20);
-            this.DepthCut_textBox.TabIndex = 28;
+            this.DepthCutTextBox.Location = new System.Drawing.Point(143, 164);
+            this.DepthCutTextBox.Name = "DepthCutTextBox";
+            this.DepthCutTextBox.Size = new System.Drawing.Size(100, 20);
+            this.DepthCutTextBox.TabIndex = 28;
             // 
-            // CentralCut_textBox
+            // CentralCutTextBox
             // 
-            this.CentralCut_textBox.Location = new System.Drawing.Point(143, 129);
-            this.CentralCut_textBox.Name = "CentralCut_textBox";
-            this.CentralCut_textBox.Size = new System.Drawing.Size(100, 20);
-            this.CentralCut_textBox.TabIndex = 27;
+            this.CentralCutTextBox.Location = new System.Drawing.Point(143, 129);
+            this.CentralCutTextBox.Name = "CentralCutTextBox";
+            this.CentralCutTextBox.Size = new System.Drawing.Size(100, 20);
+            this.CentralCutTextBox.TabIndex = 27;
             // 
-            // InsideDiameter_textBox
+            // InsideDiameterTextBox
             // 
-            this.InsideDiameter_textBox.Location = new System.Drawing.Point(143, 94);
-            this.InsideDiameter_textBox.Name = "InsideDiameter_textBox";
-            this.InsideDiameter_textBox.Size = new System.Drawing.Size(100, 20);
-            this.InsideDiameter_textBox.TabIndex = 26;
+            this.InsideDiameterTextBox.Location = new System.Drawing.Point(143, 94);
+            this.InsideDiameterTextBox.Name = "InsideDiameterTextBox";
+            this.InsideDiameterTextBox.Size = new System.Drawing.Size(100, 20);
+            this.InsideDiameterTextBox.TabIndex = 26;
             // 
-            // Width_textBox
+            // WidthTextBox
             // 
-            this.Width_textBox.Location = new System.Drawing.Point(143, 59);
-            this.Width_textBox.Name = "Width_textBox";
-            this.Width_textBox.Size = new System.Drawing.Size(100, 20);
-            this.Width_textBox.TabIndex = 25;
+            this.WidthTextBox.Location = new System.Drawing.Point(143, 59);
+            this.WidthTextBox.Name = "WidthTextBox";
+            this.WidthTextBox.Size = new System.Drawing.Size(100, 20);
+            this.WidthTextBox.TabIndex = 25;
             // 
-            // MainDiameter_textBox
+            // MainDiameterTextBox
             // 
-            this.MainDiameter_textBox.Location = new System.Drawing.Point(143, 23);
-            this.MainDiameter_textBox.Name = "MainDiameter_textBox";
-            this.MainDiameter_textBox.Size = new System.Drawing.Size(100, 20);
-            this.MainDiameter_textBox.TabIndex = 24;
+            this.MainDiameterTextBox.Location = new System.Drawing.Point(143, 23);
+            this.MainDiameterTextBox.Name = "MainDiameterTextBox";
+            this.MainDiameterTextBox.Size = new System.Drawing.Size(100, 20);
+            this.MainDiameterTextBox.TabIndex = 24;
             // 
             // label14
             // 
@@ -271,24 +273,35 @@
             this.label3.TabIndex = 13;
             this.label3.Text = "Внешний диаметр D";
             // 
-            // Build_button
+            // BuildButton
             // 
-            this.Build_button.Location = new System.Drawing.Point(91, 381);
-            this.Build_button.Name = "Build_button";
-            this.Build_button.Size = new System.Drawing.Size(219, 41);
-            this.Build_button.TabIndex = 20;
-            this.Build_button.Text = "Построить";
-            this.Build_button.UseVisualStyleBackColor = true;
+            this.BuildButton.Location = new System.Drawing.Point(90, 397);
+            this.BuildButton.Name = "BuildButton";
+            this.BuildButton.Size = new System.Drawing.Size(219, 41);
+            this.BuildButton.TabIndex = 20;
+            this.BuildButton.Text = "Построить";
+            this.BuildButton.UseVisualStyleBackColor = true;
+            this.BuildButton.Click += new System.EventHandler(this.BuildButton_Click);
+            // 
+            // WarningLabel
+            // 
+            this.WarningLabel.AutoSize = true;
+            this.WarningLabel.ForeColor = System.Drawing.Color.Red;
+            this.WarningLabel.Location = new System.Drawing.Point(11, 237);
+            this.WarningLabel.Name = "WarningLabel";
+            this.WarningLabel.Size = new System.Drawing.Size(161, 13);
+            this.WarningLabel.TabIndex = 30;
+            this.WarningLabel.Text = "Параметры введены неверно!";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(396, 430);
+            this.ClientSize = new System.Drawing.Size(396, 443);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.Build_button);
+            this.Controls.Add(this.BuildButton);
             this.Name = "MainForm";
             this.Text = "Построитель";
             this.groupBox1.ResumeLayout(false);
@@ -306,12 +319,12 @@
         private System.Windows.Forms.Button Start_button;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox Angle_textBox;
-        private System.Windows.Forms.TextBox DepthCut_textBox;
-        private System.Windows.Forms.TextBox CentralCut_textBox;
-        private System.Windows.Forms.TextBox InsideDiameter_textBox;
-        private System.Windows.Forms.TextBox Width_textBox;
-        private System.Windows.Forms.TextBox MainDiameter_textBox;
+        private System.Windows.Forms.TextBox AngleTextBox;
+        private System.Windows.Forms.TextBox DepthCutTextBox;
+        private System.Windows.Forms.TextBox CentralCutTextBox;
+        private System.Windows.Forms.TextBox InsideDiameterTextBox;
+        private System.Windows.Forms.TextBox WidthTextBox;
+        private System.Windows.Forms.TextBox MainDiameterTextBox;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
@@ -324,7 +337,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button Build_button;
+        private System.Windows.Forms.Button BuildButton;
+        private System.Windows.Forms.Label WarningLabel;
     }
 }
 
