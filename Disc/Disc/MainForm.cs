@@ -135,8 +135,8 @@ namespace Disc
         private void BuildButton_Click(object sender, EventArgs e)
         {
             kompasConnector = new KompasConnector(discParams);
-            //Builder builder = new Builder();
-            //builder.Build(kompasConnector.iPart, kompasConnector.kompas, discParams);
+            Builder builder = new Builder();
+            builder.Build(kompasConnector.iPart, kompasConnector.kompas, discParams);
         }
 
         /// <summary>
