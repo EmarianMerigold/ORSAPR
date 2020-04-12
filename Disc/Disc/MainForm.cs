@@ -71,7 +71,7 @@ namespace Disc
                 rightToken++;
             }
 
-            if ((CentralCutTextBox.Text == "") || Int32.Parse(CentralCutTextBox.Text) < 80 || (Int32.Parse(CentralCutTextBox.Text)) > 221)
+            if ((CentralCutTextBox.Text == "") || Int32.Parse(CentralCutTextBox.Text) < 80)
             {
                 CentralCutTextBox.BackColor = System.Drawing.Color.Red;
             }
@@ -103,10 +103,10 @@ namespace Disc
 
             if (rightToken == 6)
             {
-                if ((Int32.Parse(CentralCutTextBox.Text) + 30) > Int32.Parse(MainDiameterTextBox.Text))
+                if ((Int32.Parse(CentralCutTextBox.Text) + 30) > Int32.Parse(MainDiameterTextBox.Text) || Int32.Parse(CentralCutTextBox.Text) > Int32.Parse(MainDiameterTextBox.Text))
                 {
                     WarningLabel.Visible = true;
-                    WarningLabel.Text = "Центральный вырез должен быть меньше внешнего диаметра минимум на 30!";
+                    WarningLabel.Text = "Центральный вырез не соответствует условию D - 30";
                     CentralCutTextBox.BackColor = System.Drawing.Color.Red;
                     rightToken = 0;
                 }

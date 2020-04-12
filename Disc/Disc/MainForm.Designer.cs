@@ -33,6 +33,7 @@
             this.Start_button = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.WarningLabel = new System.Windows.Forms.Label();
             this.AngleTextBox = new System.Windows.Forms.TextBox();
             this.DepthCutTextBox = new System.Windows.Forms.TextBox();
             this.CentralCutTextBox = new System.Windows.Forms.TextBox();
@@ -52,7 +53,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.BuildButton = new System.Windows.Forms.Button();
-            this.WarningLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -123,12 +123,24 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ввод параметров";
             // 
+            // WarningLabel
+            // 
+            this.WarningLabel.AutoSize = true;
+            this.WarningLabel.ForeColor = System.Drawing.Color.Red;
+            this.WarningLabel.Location = new System.Drawing.Point(11, 236);
+            this.WarningLabel.Name = "WarningLabel";
+            this.WarningLabel.Size = new System.Drawing.Size(161, 13);
+            this.WarningLabel.TabIndex = 30;
+            this.WarningLabel.Text = "Параметры введены неверно!";
+            this.WarningLabel.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
+            // 
             // AngleTextBox
             // 
             this.AngleTextBox.Location = new System.Drawing.Point(143, 199);
             this.AngleTextBox.Name = "AngleTextBox";
             this.AngleTextBox.Size = new System.Drawing.Size(100, 20);
             this.AngleTextBox.TabIndex = 29;
+            this.AngleTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // DepthCutTextBox
             // 
@@ -136,6 +148,7 @@
             this.DepthCutTextBox.Name = "DepthCutTextBox";
             this.DepthCutTextBox.Size = new System.Drawing.Size(100, 20);
             this.DepthCutTextBox.TabIndex = 28;
+            this.DepthCutTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // CentralCutTextBox
             // 
@@ -143,6 +156,7 @@
             this.CentralCutTextBox.Name = "CentralCutTextBox";
             this.CentralCutTextBox.Size = new System.Drawing.Size(100, 20);
             this.CentralCutTextBox.TabIndex = 27;
+            this.CentralCutTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // InsideDiameterTextBox
             // 
@@ -150,6 +164,7 @@
             this.InsideDiameterTextBox.Name = "InsideDiameterTextBox";
             this.InsideDiameterTextBox.Size = new System.Drawing.Size(100, 20);
             this.InsideDiameterTextBox.TabIndex = 26;
+            this.InsideDiameterTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // WidthTextBox
             // 
@@ -157,6 +172,7 @@
             this.WidthTextBox.Name = "WidthTextBox";
             this.WidthTextBox.Size = new System.Drawing.Size(100, 20);
             this.WidthTextBox.TabIndex = 25;
+            this.WidthTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // MainDiameterTextBox
             // 
@@ -164,6 +180,7 @@
             this.MainDiameterTextBox.Name = "MainDiameterTextBox";
             this.MainDiameterTextBox.Size = new System.Drawing.Size(100, 20);
             this.MainDiameterTextBox.TabIndex = 24;
+            this.MainDiameterTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // label14
             // 
@@ -282,16 +299,6 @@
             this.BuildButton.Text = "Построить";
             this.BuildButton.UseVisualStyleBackColor = true;
             this.BuildButton.Click += new System.EventHandler(this.BuildButton_Click);
-            // 
-            // WarningLabel
-            // 
-            this.WarningLabel.AutoSize = true;
-            this.WarningLabel.ForeColor = System.Drawing.Color.Red;
-            this.WarningLabel.Location = new System.Drawing.Point(11, 237);
-            this.WarningLabel.Name = "WarningLabel";
-            this.WarningLabel.Size = new System.Drawing.Size(161, 13);
-            this.WarningLabel.TabIndex = 30;
-            this.WarningLabel.Text = "Параметры введены неверно!";
             // 
             // MainForm
             // 
