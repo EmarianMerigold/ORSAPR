@@ -138,6 +138,10 @@ namespace Disc
             //Builder builder = new Builder();
             //builder.Build(kompasConnector.iPart, kompasConnector.kompas, discParams);
         }
+
+        /// <summary>
+        /// Обработчик, который ограничивает ввод символов в поля.
+        /// </summary>
         private void Textbox_KeyPress(object sender, KeyPressEventArgs e)
         {
             char number = e.KeyChar;
