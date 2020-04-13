@@ -27,28 +27,28 @@ namespace Disc
         /// </summary>
         public void CreateDisc(ksPart iPart, KompasObject kompas, DiscParams discParams)
         {
-            double thickness = discParams.DiscParams;
+            //double thickness = discParams.DiscParams;
             ksEntity iSketch;
 
             ksSketchDefinition iDefinitionSketch;
 
-            CreateSketch(out iSketch, out iDefinitionSketch);
+           //CreateSketch(out iSketch, out iDefinitionSketch);
             // Интерфейс для рисования = на скетче;
-            ksDocument2D iDocument2D = (ksDocument2D)iDefinitionSketch.BeginEdit();
+            //ksDocument2D iDocument2D = (ksDocument2D)iDefinitionSketch.BeginEdit();
             // Построить прямоугольник (x1,y1, x2,y2, style)
             ksRectangleParam par1 = (ksRectangleParam)kompas.GetParamStruct((short)StructType2DEnum.ko_RectangleParam);
             par1.ang = 0; //Угол ?
             par1.x = 10;
             par1.y = 10;
-            par1.width = discParams.HiveLength;
-            par1.height = discParams.HiveHeight; // Больше похоже на ширину, нежели высоту.
+            //par1.width = discParams.HiveLength;
+            //par1.height = discParams.HiveHeight; // Больше похоже на ширину, нежели высоту.
             par1.style = 1; // При нуле не видно деталь.
-            iDocument2D.ksRectangle(par1);
+            //iDocument2D.ksRectangle(par1);
 
             // Закончить редактировать эскиз
-            iDefinitionSketch.EndEdit();
+            //iDefinitionSketch.EndEdit();
 
-            ExctrusionSketch(iPart, iSketch, thickness, true);
+           // ExctrusionSketch(iPart, iSketch, thickness, true);
         }
     }
 }
