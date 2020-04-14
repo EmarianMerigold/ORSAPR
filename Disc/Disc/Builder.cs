@@ -23,6 +23,7 @@ namespace Disc
             CreateDisc(iPart, kompas, discparams);
         }
 
+
         /// <summary>
         /// Функция выполняет построение основного диска.
         /// </summary>
