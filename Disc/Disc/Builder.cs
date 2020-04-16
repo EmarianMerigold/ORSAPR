@@ -21,8 +21,8 @@ namespace Disc
         {
             this.iPart = iPart;
             CreateDisc(iPart, kompas, discparams);
+            CreateMainCut(iPart, kompas, discparams);
         }
-
 
         /// <summary>
         /// Функция выполняет построение основного диска.
@@ -48,6 +48,40 @@ namespace Disc
             iDefinitionSketch.EndEdit();
 
             ExctrusionSketch(iPart, iSketch, thickness, true);
+        }
+
+        /// <summary>
+        /// Функция создает центральное отверстие в диске
+        /// </summary>
+        private void CreateMainCut(ksPart iPart, KompasObject kompas, DiscParams discParams)
+        {
+            // Смещение по оси Z
+            double offset = discParams.Width;
+            // Радиус центрального отерстия.
+            double radius = discParams.InsideDiameter / 2;
+
+            ksEntity iSketch;
+            ksSketchDefinition iDefinitionSketch;
+
+            CreateSketch(out iSketch, out iDefinitionSketch, offset);
+            
+            // Интерфейс для рисования = на скетче;
+            ksDocument2D iDocument2D = (ksDocument2D)iDefinitionSketch.BeginEdit();
+
+            iDocument2D.ksCircle(0, 0, radius, 1);
+
+            // Закончить редактировать эскиз
+            iDefinitionSketch.EndEdit();
+
+            // Вырезание выдавливанием
+            ksEntity entityCutExtr = (ksEntity)iPart.NewEntity((short)Obj3dType.o3d_cutExtrusion);
+            ksCutExtrusionDefinition cutExtrDef = (ksCutExtrusionDefinition)entityCutExtr.GetDefinition();
+            cutExtrDef.SetSketch(iSketch);    // установим эскиз операции
+            cutExtrDef.directionType = (short)Direction_Type.dtNormal; //прямое направление
+            cutExtrDef.SetSideParam(true, (short)End_Type.etBlind, discParams.Width, 0, false);
+            cutExtrDef.SetThinParam(false, 0, 0, 0);
+            entityCutExtr.Create(); // создадим операцию вырезание выдавливанием
+
         }
 
         /// <summary>
