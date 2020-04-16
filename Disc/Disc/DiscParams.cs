@@ -21,12 +21,12 @@ namespace Disc
         /// <summary>
         /// Конструктор класса HiveParams
         /// </summary>
-        /// <param name="mainDiameter"> Внешний диаметр диска</param>
-        /// <param name="width"> Толщина диска</param>
-        /// <param name="insideDiameter"> Внутренний диаметр диска</param>
-        /// <param name="centralCut"> Центральны вырез диска</param>
-        /// <param name="depthCut"> Глубина выреза диска</param>
-        /// <param name="angle"> Угол скругления рёбер диска</param>
+        /// <param name="mainDiameter"> Диаметр диска </param>
+        /// <param name="width"> Толщина диска </param>
+        /// <param name="insideDiameter"> Диаметр отверстия диска </param>
+        /// <param name="centralCut"> Диаметр выреза граней диска </param>
+        /// <param name="depthCut"> Глубина выреза граней диска </param>
+        /// <param name="angle"> Угол скругления рёбер диска </param>
         public DiscParams(int mainDiameter, int width, int insideDiameter, int centralCut, int depthCut, int angle)
         {
             MainDiameter = mainDiameter;

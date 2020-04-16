@@ -56,7 +56,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 22);
+            this.label1.Location = new System.Drawing.Point(42, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(329, 13);
             this.label1.TabIndex = 22;
@@ -85,7 +85,7 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Location = new System.Drawing.Point(13, 53);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(371, 264);
+            this.groupBox2.Size = new System.Drawing.Size(387, 264);
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ввод параметров";
@@ -94,7 +94,7 @@
             // 
             this.WarningLabel.AutoSize = true;
             this.WarningLabel.ForeColor = System.Drawing.Color.Red;
-            this.WarningLabel.Location = new System.Drawing.Point(11, 236);
+            this.WarningLabel.Location = new System.Drawing.Point(11, 239);
             this.WarningLabel.Name = "WarningLabel";
             this.WarningLabel.Size = new System.Drawing.Size(161, 13);
             this.WarningLabel.TabIndex = 30;
@@ -103,7 +103,7 @@
             // 
             // AngleTextBox
             // 
-            this.AngleTextBox.Location = new System.Drawing.Point(143, 199);
+            this.AngleTextBox.Location = new System.Drawing.Point(158, 199);
             this.AngleTextBox.Name = "AngleTextBox";
             this.AngleTextBox.Size = new System.Drawing.Size(100, 20);
             this.AngleTextBox.TabIndex = 29;
@@ -112,7 +112,7 @@
             // 
             // DepthCutTextBox
             // 
-            this.DepthCutTextBox.Location = new System.Drawing.Point(143, 164);
+            this.DepthCutTextBox.Location = new System.Drawing.Point(158, 164);
             this.DepthCutTextBox.Name = "DepthCutTextBox";
             this.DepthCutTextBox.Size = new System.Drawing.Size(100, 20);
             this.DepthCutTextBox.TabIndex = 28;
@@ -121,7 +121,7 @@
             // 
             // CentralCutTextBox
             // 
-            this.CentralCutTextBox.Location = new System.Drawing.Point(143, 129);
+            this.CentralCutTextBox.Location = new System.Drawing.Point(158, 129);
             this.CentralCutTextBox.Name = "CentralCutTextBox";
             this.CentralCutTextBox.Size = new System.Drawing.Size(100, 20);
             this.CentralCutTextBox.TabIndex = 27;
@@ -130,7 +130,7 @@
             // 
             // InsideDiameterTextBox
             // 
-            this.InsideDiameterTextBox.Location = new System.Drawing.Point(143, 94);
+            this.InsideDiameterTextBox.Location = new System.Drawing.Point(158, 94);
             this.InsideDiameterTextBox.Name = "InsideDiameterTextBox";
             this.InsideDiameterTextBox.Size = new System.Drawing.Size(100, 20);
             this.InsideDiameterTextBox.TabIndex = 26;
@@ -139,7 +139,7 @@
             // 
             // WidthTextBox
             // 
-            this.WidthTextBox.Location = new System.Drawing.Point(143, 59);
+            this.WidthTextBox.Location = new System.Drawing.Point(158, 59);
             this.WidthTextBox.Name = "WidthTextBox";
             this.WidthTextBox.Size = new System.Drawing.Size(100, 20);
             this.WidthTextBox.TabIndex = 25;
@@ -148,7 +148,7 @@
             // 
             // MainDiameterTextBox
             // 
-            this.MainDiameterTextBox.Location = new System.Drawing.Point(143, 23);
+            this.MainDiameterTextBox.Location = new System.Drawing.Point(158, 23);
             this.MainDiameterTextBox.Name = "MainDiameterTextBox";
             this.MainDiameterTextBox.Size = new System.Drawing.Size(100, 20);
             this.MainDiameterTextBox.TabIndex = 24;
@@ -158,7 +158,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(249, 202);
+            this.label14.Location = new System.Drawing.Point(264, 202);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(118, 13);
             this.label14.TabIndex = 23;
@@ -167,7 +167,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(249, 167);
+            this.label13.Location = new System.Drawing.Point(264, 167);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(88, 13);
             this.label13.TabIndex = 22;
@@ -176,7 +176,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(249, 132);
+            this.label12.Location = new System.Drawing.Point(264, 132);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(111, 13);
             this.label12.TabIndex = 21;
@@ -185,7 +185,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(249, 97);
+            this.label11.Location = new System.Drawing.Point(264, 97);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(86, 13);
             this.label11.TabIndex = 20;
@@ -194,7 +194,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(249, 62);
+            this.label10.Location = new System.Drawing.Point(264, 62);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(94, 13);
             this.label10.TabIndex = 19;
@@ -203,7 +203,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(249, 26);
+            this.label9.Location = new System.Drawing.Point(264, 26);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(106, 13);
             this.label9.TabIndex = 18;
@@ -223,49 +223,49 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(10, 62);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(64, 13);
+            this.label7.Size = new System.Drawing.Size(97, 13);
             this.label7.TabIndex = 17;
-            this.label7.Text = "Толщина H";
+            this.label7.Text = "Толщина диска H";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(11, 167);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(98, 13);
+            this.label6.Size = new System.Drawing.Size(136, 13);
             this.label6.TabIndex = 16;
-            this.label6.Text = "Глубина выреза F";
+            this.label6.Text = "Глубина выреза граней F";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(10, 132);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(121, 13);
+            this.label5.Size = new System.Drawing.Size(142, 13);
             this.label5.TabIndex = 15;
-            this.label5.Text = "Центральный вырез C";
+            this.label5.Text = "Диаметр выреза граней C";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(10, 97);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(122, 13);
+            this.label4.Size = new System.Drawing.Size(118, 13);
             this.label4.TabIndex = 14;
-            this.label4.Text = "Внутренний диаметр B";
+            this.label4.Text = "Диаметр отверстия B";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(10, 26);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 13);
+            this.label3.Size = new System.Drawing.Size(97, 13);
             this.label3.TabIndex = 13;
-            this.label3.Text = "Внешний диаметр D";
+            this.label3.Text = "Диаметр диска D";
             // 
             // BuildButton
             // 
-            this.BuildButton.Location = new System.Drawing.Point(90, 323);
+            this.BuildButton.Location = new System.Drawing.Point(98, 323);
             this.BuildButton.Name = "BuildButton";
             this.BuildButton.Size = new System.Drawing.Size(219, 41);
             this.BuildButton.TabIndex = 20;
@@ -277,7 +277,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(396, 370);
+            this.ClientSize = new System.Drawing.Size(412, 370);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.BuildButton);

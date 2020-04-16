@@ -25,11 +25,11 @@ namespace Disc
         /// </summary>
         private void AutoParams()
         {
-            MainDiameterTextBox.Text = "137";
-            WidthTextBox.Text = "26";
+            MainDiameterTextBox.Text = "250";
+            WidthTextBox.Text = "69";
             InsideDiameterTextBox.Text = "26";
-            CentralCutTextBox.Text = "80";
-            DepthCutTextBox.Text = "5";
+            CentralCutTextBox.Text = "200";
+            DepthCutTextBox.Text = "10";
             AngleTextBox.Text = "10";
         }
         /// <summary>

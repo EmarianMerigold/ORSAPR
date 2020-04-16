@@ -12,7 +12,7 @@ namespace Disc
         // public KompasConnector kompas;
 
         /// <summary>
-        /// Функция, которая выполняет построение всех деталей.
+        /// Функция, которая выполняет все элементы построения.
         /// </summary>
         /// <param name="iPart"> интерфейс детали</param>
         /// <param name="kompas">  объект типа kompas</param>
@@ -21,7 +21,9 @@ namespace Disc
         {
             this.iPart = iPart;
             CreateDisc(iPart, kompas, discparams);
-            CreateMainCut(iPart, kompas, discparams);
+            CreateHole(iPart, kompas, discparams);
+            CreateFrontCut(iPart, kompas, discparams);
+            CreateBackCut(iPart, kompas, discparams);
         }
 
         /// <summary>
@@ -53,7 +55,7 @@ namespace Disc
         /// <summary>
         /// Функция создает центральное отверстие в диске
         /// </summary>
-        private void CreateMainCut(ksPart iPart, KompasObject kompas, DiscParams discParams)
+        private void CreateHole(ksPart iPart, KompasObject kompas, DiscParams discParams)
         {
             // Смещение по оси Z
             double offset = discParams.Width;
@@ -79,6 +81,74 @@ namespace Disc
             cutExtrDef.SetSketch(iSketch);    // установим эскиз операции
             cutExtrDef.directionType = (short)Direction_Type.dtNormal; //прямое направление
             cutExtrDef.SetSideParam(true, (short)End_Type.etBlind, discParams.Width, 0, false);
+            cutExtrDef.SetThinParam(false, 0, 0, 0);
+            entityCutExtr.Create(); // создадим операцию вырезание выдавливанием
+
+        }
+        
+        /// <summary>
+        /// Функция создает вырез грани с лицевой стороны диска.
+        /// </summary>
+        private void CreateFrontCut(ksPart iPart, KompasObject kompas, DiscParams discParams)
+        {
+            // Смещение по оси Z
+            double offset = discParams.Width;
+            // Радиус центрального отерстия.
+            double radius = discParams.CentralCut / 2;
+
+            ksEntity iSketch;
+            ksSketchDefinition iDefinitionSketch;
+
+            CreateSketch(out iSketch, out iDefinitionSketch, offset);
+
+            // Интерфейс для рисования = на скетче;
+            ksDocument2D iDocument2D = (ksDocument2D)iDefinitionSketch.BeginEdit();
+
+            iDocument2D.ksCircle(0, 0, radius, 1);
+
+            // Закончить редактировать эскиз
+            iDefinitionSketch.EndEdit();
+
+            // Вырезание выдавливанием
+            ksEntity entityCutExtr = (ksEntity)iPart.NewEntity((short)Obj3dType.o3d_cutExtrusion);
+            ksCutExtrusionDefinition cutExtrDef = (ksCutExtrusionDefinition)entityCutExtr.GetDefinition();
+            cutExtrDef.SetSketch(iSketch);    // установим эскиз операции
+            cutExtrDef.directionType = (short)Direction_Type.dtNormal; //прямое направление
+            cutExtrDef.SetSideParam(true, (short)End_Type.etBlind, discParams.DepthCut, 0, false);
+            cutExtrDef.SetThinParam(false, 0, 0, 0);
+            entityCutExtr.Create(); // создадим операцию вырезание выдавливанием
+
+        }
+
+        /// <summary>
+        /// Функция создает вырез грани с тыльной стороны диска.
+        /// </summary>
+        private void CreateBackCut(ksPart iPart, KompasObject kompas, DiscParams discParams)
+        {
+            // Смещение по оси Z
+            double offset = discParams.DepthCut;
+            // Радиус центрального отерстия.
+            double radius = discParams.CentralCut / 2;
+
+            ksEntity iSketch;
+            ksSketchDefinition iDefinitionSketch;
+
+            CreateSketch(out iSketch, out iDefinitionSketch, offset);
+
+            // Интерфейс для рисования = на скетче;
+            ksDocument2D iDocument2D = (ksDocument2D)iDefinitionSketch.BeginEdit();
+
+            iDocument2D.ksCircle(0, 0, radius, 1);
+
+            // Закончить редактировать эскиз
+            iDefinitionSketch.EndEdit();
+
+            // Вырезание выдавливанием
+            ksEntity entityCutExtr = (ksEntity)iPart.NewEntity((short)Obj3dType.o3d_cutExtrusion);
+            ksCutExtrusionDefinition cutExtrDef = (ksCutExtrusionDefinition)entityCutExtr.GetDefinition();
+            cutExtrDef.SetSketch(iSketch);    // установим эскиз операции
+            cutExtrDef.directionType = (short)Direction_Type.dtNormal; //прямое направление
+            cutExtrDef.SetSideParam(true, (short)End_Type.etBlind, discParams.DepthCut, 0, false);
             cutExtrDef.SetThinParam(false, 0, 0, 0);
             entityCutExtr.Create(); // создадим операцию вырезание выдавливанием
 
