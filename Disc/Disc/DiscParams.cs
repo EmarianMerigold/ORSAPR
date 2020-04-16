@@ -73,7 +73,7 @@ namespace Disc
             {
                 if (value < 26 || value > 31)
                 {
-                    throw new ArgumentException("Значение должно находится в диапазоне от 28 до 31");
+                    throw new ArgumentException("Значение должно находится в диапазоне от 26 до 31");
                 }
 
                 _insideDiameter = value;
