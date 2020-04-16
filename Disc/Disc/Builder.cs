@@ -6,10 +6,7 @@ namespace Disc
 {
     class Builder
     {
-        //KompasObject kompas;
         public ksPart iPart;
-        // public HiveParams HiveParams;
-        // public KompasConnector kompas;
 
         /// <summary>
         /// Функция, которая выполняет все элементы построения.
