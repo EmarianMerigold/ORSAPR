@@ -21,6 +21,7 @@ namespace Disc
             CreateHole(iPart, kompas, discparams);
             CreateFrontCut(iPart, kompas, discparams);
             CreateBackCut(iPart, kompas, discparams);
+            CreateRounding(iPart, kompas, discparams);
         }
 
         /// <summary>
@@ -149,6 +150,26 @@ namespace Disc
             cutExtrDef.SetThinParam(false, 0, 0, 0);
             entityCutExtr.Create(); // создадим операцию вырезание выдавливанием
 
+        }
+
+        /// <summary>
+        /// Функция выполняет скругление рёбер диска.
+        /// </summary>
+        private void CreateRounding(ksPart iPart, KompasObject kompas, DiscParams discParams)
+        {
+            //Угол скругления
+            double radius = discParams.Angle;
+
+            ksEntity entityFillet = (ksEntity)iPart.NewEntity((short)Obj3dType.o3d_fillet);
+            ksFilletDefinition filletDef = (ksFilletDefinition)entityFillet.GetDefinition();
+            filletDef.radius = radius;      // радиус скругления
+            filletDef.tangent = false;  // продолжить по касательной
+            ksEntityCollection collect = (ksEntityCollection)iPart.EntityCollection((short)Obj3dType.o3d_face);
+            ksEntityCollection arr = (ksEntityCollection)filletDef.array();	// динамический массив объектов
+            arr.Add(collect.GetByIndex(2));
+            arr.Add(collect.GetByIndex(0));
+
+            entityFillet.Create(); //создадим операцию скругления
         }
 
         /// <summary>

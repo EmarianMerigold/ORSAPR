@@ -30,7 +30,7 @@ namespace Disc
             InsideDiameterTextBox.Text = "26";
             CentralCutTextBox.Text = "200";
             DepthCutTextBox.Text = "10";
-            AngleTextBox.Text = "10";
+            AngleTextBox.Text = "4";
         }
         /// <summary>
         /// Функция проверяет правильность введенных данных в поля, если же все данные верны то присваивает значения.
