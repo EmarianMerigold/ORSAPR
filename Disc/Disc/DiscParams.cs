@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Disc
 {
     /// <summary>
     /// Класс, который содержит в себе поля для параметров диска.
     /// </summary>
-    class DiscParams
+    public class DiscParams
     {
         private int _mainDiameter;
         private int _width;
