@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
+using Disc_Kompas.API;
+using Disc_Kompas.Logic;
 
-namespace Disc
+namespace Disc_Kompas
 {
     public partial class MainForm : Form
     {

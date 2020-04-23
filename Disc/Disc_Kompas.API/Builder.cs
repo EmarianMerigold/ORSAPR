@@ -1,10 +1,11 @@
-﻿using Kompas6API5;
+﻿using Disc_Kompas.Logic;
+using Kompas6API5;
 using Kompas6Constants;
 using Kompas6Constants3D;
 
-namespace Disc
+namespace Disc_Kompas.API
 {
-    class Builder
+    public class Builder
     {
         public ksPart iPart;
 
@@ -64,7 +65,7 @@ namespace Disc
             ksSketchDefinition iDefinitionSketch;
 
             CreateSketch(out iSketch, out iDefinitionSketch, offset);
-            
+
             // Интерфейс для рисования = на скетче;
             ksDocument2D iDocument2D = (ksDocument2D)iDefinitionSketch.BeginEdit();
 
@@ -83,7 +84,7 @@ namespace Disc
             entityCutExtr.Create(); // создадим операцию вырезание выдавливанием
 
         }
-        
+
         /// <summary>
         /// Функция создает вырез грани с лицевой стороны диска.
         /// </summary>

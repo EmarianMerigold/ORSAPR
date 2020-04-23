@@ -1,21 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Runtime.InteropServices;
-using System.Windows.Forms;
+using Disc_Kompas.Logic;
 using Kompas6API5;
-using Kompas6Constants;
 using Kompas6Constants3D;
-//using KompasAPI7;
-//using Kompas6Constants3D;
-//using KAPITypes;
-//using Kompas6Constants;
 
-namespace Disc
+
+namespace Disc_Kompas.API
 {
-    class KompasConnector
+    public class KompasConnector
     {
         // c помощью этого обьекта мы можем 
         // выбрать определенное окно приложения компас
@@ -29,13 +20,12 @@ namespace Disc
         // взять управление конкретно над интерфейсом программы
         public ksPart iPart = null;
 
-        // public KompasConnector(HiveParams hiveParams)
         public KompasConnector(DiscParams discParams)
         {
             TakeKompas();
         }
 
-        // Кнопка запустить компас, Береме контроль _kompas, и интерфейсом
+        // Кнопка запустить компас, берем контроль _kompas, и интерфейсом
         public void TakeKompas()
         {
             // если окно компаса не включено
@@ -57,7 +47,7 @@ namespace Disc
             // создать документ
             _doc3D.Create(false/*invisible*/, true);
 
-            // получить интерфейс детали !!
+            // получить интерфейс детали
             iPart = (ksPart)_doc3D.GetPart((short)Part_Type.pTop_Part);
         }
     }

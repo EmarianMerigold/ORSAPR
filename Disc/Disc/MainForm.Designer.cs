@@ -1,4 +1,4 @@
-﻿namespace Disc
+﻿namespace Disc_Kompas
 {
     partial class MainForm
     {

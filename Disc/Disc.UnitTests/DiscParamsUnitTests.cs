@@ -1,7 +1,7 @@
 ﻿using System;
 using NUnit.Framework;
 
-namespace Disc.UnitTests
+namespace Disc_Kompas.UnitTests
 {
     public class UnitTests
     {

@@ -48,13 +48,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UnitTests.cs" />
+    <Compile Include="DiscParamsUnitTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Disc\Disc.csproj">
+    <ProjectReference Include="..\Disc\Disc_Kompas.GUI.csproj">
       <Project>{4d58f45a-c876-4e9b-b09b-0beac091d4df}</Project>
-      <Name>Disc</Name>
+      <Name>Disc_Kompas.GUI</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

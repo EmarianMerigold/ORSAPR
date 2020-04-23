@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Disc
+namespace Disc_Kompas.Logic
 {
     /// <summary>
     /// Класс, который содержит в себе поля для параметров диска.
@@ -116,4 +116,3 @@ namespace Disc
         }
     }
 }
-
