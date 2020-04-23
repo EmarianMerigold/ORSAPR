@@ -1,4 +1,5 @@
 ﻿using System;
+using Disc_Kompas.Logic;
 using NUnit.Framework;
 
 namespace Disc_Kompas.UnitTests
