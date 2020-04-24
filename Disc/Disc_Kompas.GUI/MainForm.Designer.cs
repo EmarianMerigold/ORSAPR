@@ -1,4 +1,4 @@
-﻿namespace Disc_Kompas
+﻿namespace Disc_Kompas.GUI
 {
     partial class MainForm
     {
@@ -56,10 +56,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(42, 22);
+            this.label1.Location = new System.Drawing.Point(42, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(329, 13);
-            this.label1.TabIndex = 22;
+            this.label1.TabIndex = 25;
             this.label1.Text = "Задайте параметры для построения 3D-модели диска гантели:";
             // 
             // groupBox2
@@ -83,10 +83,10 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Location = new System.Drawing.Point(13, 53);
+            this.groupBox2.Location = new System.Drawing.Point(13, 51);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(387, 264);
-            this.groupBox2.TabIndex = 21;
+            this.groupBox2.TabIndex = 24;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ввод параметров";
             // 
@@ -99,7 +99,6 @@
             this.WarningLabel.Size = new System.Drawing.Size(161, 13);
             this.WarningLabel.TabIndex = 30;
             this.WarningLabel.Text = "Параметры введены неверно!";
-            this.WarningLabel.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // AngleTextBox
             // 
@@ -265,10 +264,10 @@
             // 
             // BuildButton
             // 
-            this.BuildButton.Location = new System.Drawing.Point(98, 323);
+            this.BuildButton.Location = new System.Drawing.Point(96, 321);
             this.BuildButton.Name = "BuildButton";
             this.BuildButton.Size = new System.Drawing.Size(219, 41);
-            this.BuildButton.TabIndex = 20;
+            this.BuildButton.TabIndex = 23;
             this.BuildButton.Text = "Построить";
             this.BuildButton.UseVisualStyleBackColor = true;
             this.BuildButton.Click += new System.EventHandler(this.BuildButton_Click);
@@ -277,7 +276,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(412, 370);
+            this.ClientSize = new System.Drawing.Size(413, 369);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.BuildButton);
@@ -294,8 +293,10 @@
         }
 
         #endregion
+
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label WarningLabel;
         private System.Windows.Forms.TextBox AngleTextBox;
         private System.Windows.Forms.TextBox DepthCutTextBox;
         private System.Windows.Forms.TextBox CentralCutTextBox;
@@ -315,7 +316,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button BuildButton;
-        private System.Windows.Forms.Label WarningLabel;
     }
 }
 

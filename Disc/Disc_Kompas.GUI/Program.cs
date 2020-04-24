@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Disc_Kompas
+namespace Disc_Kompas.GUI
 {
     static class Program
     {

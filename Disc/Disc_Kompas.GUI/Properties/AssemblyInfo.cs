@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанных со сборкой.
-[assembly: AssemblyTitle("Disc")]
+[assembly: AssemblyTitle("Disc_Kompas.GUI")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Disc")]
+[assembly: AssemblyProduct("Disc_Kompas.GUI")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID служит для идентификации библиотеки типов, если этот проект будет видимым для COM
-[assembly: Guid("4d58f45a-c876-4e9b-b09b-0beac091d4df")]
+[assembly: Guid("8bcd8aa3-4db5-4623-b3a1-60bcfd4e3cf0")]
 
 // Сведения о версии сборки состоят из указанных ниже четырех значений:
 //

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Disc_Kompas.Properties
+namespace Disc_Kompas.GUI.Properties
 {
 
 

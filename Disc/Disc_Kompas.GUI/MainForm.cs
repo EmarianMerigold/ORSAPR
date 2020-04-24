@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using Disc_Kompas.API;
 using Disc_Kompas.Logic;
 
-namespace Disc_Kompas
+namespace Disc_Kompas.GUI
 {
     public partial class MainForm : Form
     {
@@ -14,7 +14,7 @@ namespace Disc_Kompas
         {
             InitializeComponent();
             AutoParams();
-        } 
+        }
         /// <summary>
         /// Функция, которая производит автозаполнение данных в поля.
         /// </summary>
