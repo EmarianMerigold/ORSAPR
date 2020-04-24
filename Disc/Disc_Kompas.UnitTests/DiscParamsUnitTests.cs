@@ -19,8 +19,8 @@ namespace Disc_Kompas.UnitTests
             var expected = 200;
             discParams.MainDiameter = expected;
             var actual = discParams.MainDiameter;
-            Assert.AreEqual(expected, actual, 
-                "Геттер MainDiameter возвращает неправильное значение.");
+            Assert.AreEqual(expected, actual,
+                "Проверка на правильные значения.");
         }
 
         [Test(Description = "Проверка толщины диска")]
@@ -73,114 +73,71 @@ namespace Disc_Kompas.UnitTests
                 "Проверка на правильные значения");
         }
 
-        /*
-        [Test(Description = "Позитивный тест геттера MainDiameter")]
-        public void TestMainDiameterGet_CorrectValue()
+        [TestCase(136, "Исключение, если число меньше граничных значений",
+          TestName = "Присвоение меньшего числа - Диаметр диска")]
+        [TestCase(252, "Исключение, если число больше граничных значений",
+          TestName = "Присвоение большего числа - Диаметр диска")]
+        public void TestBorderMainDiameterSet_ArgumentException(int wrongParam, string message)
         {
-            var expected = 200;
-            var discParams = new DiscParams(250, 69, 26, 200, 10, 4);
-            discParams.MainDiameter = expected;
-            var actual = discParams.MainDiameter;
-            Assert.AreEqual(expected, actual, "Геттер MainDiameter возвращает неправильное значение.");
+            Assert.Throws<ArgumentException>(
+                () => { discParams.MainDiameter = wrongParam; },
+                message);
         }
 
-        [Test(Description = "Негативный тест геттера MainDiameter")]
-        public void TestMainDiameterGet_BadValue()
+        [TestCase(25, "Исключение, если число меньше граничных значений",
+          TestName = "Присвоение меньшего числа - Толщина диска")]
+        [TestCase(70, "Исключение, если число больше граничных значений",
+          TestName = "Присвоение большего числа - Толщина диска")]
+        public void TestBorderWidthSet_ArgumentException(int wrongParam, string message)
         {
-            var wrongMainDiameter = 99999;
-            var discParams = new DiscParams(250, 69, 26, 200, 10, 4);
-            Assert.Throws<ArgumentException>(() => { discParams.MainDiameter = wrongMainDiameter; }, "-");
+            Assert.Throws<ArgumentException>(
+                () => { discParams.Width = wrongParam; },
+                message);
         }
 
-        [Test(Description = "Позитивный тест геттера Width")]
-        public void TestWidthGet_CorrectValue()
+        [TestCase(25, "Исключение, если число меньше граничных значений",
+          TestName = "Присвоение меньшего числа - Диаметр отверстия")]
+        [TestCase(32, "Исключение, если число больше граничных значений",
+          TestName = "Присвоение большего числа - Диаметр отверстия")]
+        public void TestBorderInsideDiameterSet_ArgumentException(int wrongParam, string message)
         {
-            var expected = 30;
-            var discParams = new DiscParams(250, 69, 26, 200, 10, 4);
-            discParams.Width = expected;
-            var actual = discParams.Width;
-            Assert.AreEqual(expected, actual, "Геттер Width возвращает неправильное значение.");
+            Assert.Throws<ArgumentException>(
+                () => { discParams.InsideDiameter = wrongParam; },
+                message);
         }
 
-        [Test(Description = "Негативный тест геттера Width")]
-        public void TestWidthGet_BadValue()
+        [TestCase(79, "Исключение, если число меньше граничных значений",
+          TestName = "Присвоение меньшего числа - Диаметр выреза граней")]
+        [TestCase(222, "Исключение, если число больше граничных значений",
+          TestName = "Присвоение большего числа - Диаметр выреза граней")]
+        public void TestBorderCentralCutSet_ArgumentException(int wrongParam, string message)
         {
-            var wrongWidth = 99999;
-            var discParams = new DiscParams(250, 69, 26, 200, 10, 4);
-            Assert.Throws<ArgumentException>(() => { discParams.Width = wrongWidth; }, "-");
+            Assert.Throws<ArgumentException>(
+                () => { discParams.CentralCut = wrongParam; },
+                message);
         }
 
-        [Test(Description = "Позитивный тест геттера InsideDiameter")]
-        public void TestInsideDiameterGet_CorrectValue()
+        [TestCase(4, "Исключение, если число меньше граничных значений",
+         TestName = "Присвоение меньшего числа - Глубина выреза граней")]
+        [TestCase(11, "Исключение, если число больше граничных значений",
+         TestName = "Присвоение большего числа - Глубина выреза граней")]
+        public void TestBorderDepthCutSet_ArgumentException(int wrongParam, string message)
         {
-            var expected = 30;
-            var discParams = new DiscParams(250, 69, 26, 200, 10, 4);
-            discParams.InsideDiameter = expected;
-            var actual = discParams.InsideDiameter;
-            Assert.AreEqual(expected, actual, "Геттер InsideDiameter возвращает неправильное значение.");
+            Assert.Throws<ArgumentException>(
+                () => { discParams.DepthCut = wrongParam; },
+                message);
         }
 
-        [Test(Description = "Негативный тест геттера InsideDiameter")]
-        public void TestInsideDiameterGet_BadValue()
+        [TestCase(0, "Исключение, если число меньше граничных значений",
+         TestName = "Присвоение меньшего числа - Угол скругления рёбер")]
+        [TestCase(11, "Исключение, если число больше граничных значений",
+         TestName = "Присвоение большего числа - Угол скругления рёбер")]
+        public void TestBorderAngleSet_ArgumentException(int wrongParam, string message)
         {
-            var wrongInsideDiameter = 99999;
-            var discParams = new DiscParams(250, 69, 26, 200, 10, 4);
-            Assert.Throws<ArgumentException>(() => { discParams.InsideDiameter = wrongInsideDiameter; }, "-");
+            Assert.Throws<ArgumentException>(
+                () => { discParams.Angle = wrongParam; },
+                message);
         }
-
-        [Test(Description = "Позитивный тест геттера CentralCut")]
-        public void TestCentralCutGet_CorrectValue()
-        {
-            var expected = 80;
-            var discParams = new DiscParams(250, 69, 26, 200, 10, 4);
-            discParams.CentralCut = expected;
-            var actual = discParams.CentralCut;
-            Assert.AreEqual(expected, actual, "Геттер CentralCut возвращает неправильное значение.");
-        }
-
-        [Test(Description = "Негативный тест геттера CentralCut")]
-        public void TestCentralCutGet_BadValue()
-        {
-            var wrongCentralCut = 99999;
-            var discParams = new DiscParams(250, 69, 26, 200, 10, 4);
-            Assert.Throws<ArgumentException>(() => { discParams.CentralCut = wrongCentralCut; }, "-");
-        }
-
-        [Test(Description = "Позитивный тест геттера DepthCut")]
-        public void TestDepthCutGet_CorrectValue()
-        {
-            var expected = 5;
-            var discParams = new DiscParams(250, 69, 26, 200, 10, 4);
-            discParams.DepthCut = expected;
-            var actual = discParams.DepthCut;
-            Assert.AreEqual(expected, actual, "Геттер DepthCut возвращает неправильное значение.");
-        }
-
-        [Test(Description = "Негативный тест геттера DepthCut")]
-        public void TestDepthCutGet_BadValue()
-        {
-            var wrongDepthCut = 99999;
-            var discParams = new DiscParams(250, 69, 26, 200, 10, 4);
-            Assert.Throws<ArgumentException>(() => { discParams.DepthCut = wrongDepthCut; }, "-");
-        }
-
-        [Test(Description = "Позитивный тест геттера Angle")]
-        public void TestAngleGet_CorrectValue()
-        {
-            var expected = 5;
-            var discParams = new DiscParams(250, 69, 26, 200, 10, 4);
-            discParams.Angle = expected;
-            var actual = discParams.Angle;
-            Assert.AreEqual(expected, actual, "Геттер Angle возвращает неправильное значение.");
-        }
-
-        [Test(Description = "Негативный тест геттера Angle")]
-        public void TestAngleGet_BadValue()
-        {
-            var wrongAngle = 99999;
-            var discParams = new DiscParams(250, 69, 26, 200, 10, 4);
-            Assert.Throws<ArgumentException>(() => { discParams.Angle = wrongAngle; }, "-");
-        } */
     }
 }
 
