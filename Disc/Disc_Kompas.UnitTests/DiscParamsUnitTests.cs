@@ -4,8 +4,76 @@ using NUnit.Framework;
 
 namespace Disc_Kompas.UnitTests
 {
-    public class UnitTests
+    public class DiscParamsUnitTests
     {
+        private DiscParams discParams;
+        [SetUp]
+        public void SetUp()
+        {
+            discParams = new DiscParams(250, 69, 26, 200, 10, 4);
+        }
+
+        [Test(Description = "Проерка диаметра диска")]
+        public void TestMainDiameterGet_CorrectValue()
+        {
+            var expected = 200;
+            discParams.MainDiameter = expected;
+            var actual = discParams.MainDiameter;
+            Assert.AreEqual(expected, actual, 
+                "Геттер MainDiameter возвращает неправильное значение.");
+        }
+
+        [Test(Description = "Проверка толщины диска")]
+        public void TestWidthGet_CorrectValue()
+        {
+            var expected = 30;
+            discParams.Width = expected;
+            var actual = discParams.Width;
+            Assert.AreEqual(expected, actual, 
+                "Проверка на правильные значения");
+        }
+
+        [Test(Description = "Проверка диаметра отверстия диска")]
+        public void TestInsideDiameterGet_CorrectValue()
+        {
+            var expected = 30;
+            discParams.InsideDiameter = expected;
+            var actual = discParams.InsideDiameter;
+            Assert.AreEqual(expected, actual, 
+                "Проверка на правильные значения");
+        }
+
+        [Test(Description = "Проверка диаметра выреза граней")]
+        public void TestCentralCutGet_CorrectValue()
+        {
+            var expected = 80;
+            discParams.CentralCut = expected;
+            var actual = discParams.CentralCut;
+            Assert.AreEqual(expected, actual, 
+                "Проверка на правильные значения");
+        }
+
+        [Test(Description = "Проверка глубины выреза граней")]
+        public void TestDepthCutGet_CorrectValue()
+        {
+            var expected = 5;
+            discParams.DepthCut = expected;
+            var actual = discParams.DepthCut;
+            Assert.AreEqual(expected, actual, 
+                "Проверка на правильные значения");
+        }
+
+        [Test(Description = "Проверка угла скругления рёбер")]
+        public void TestAngleGet_CorrectValue()
+        {
+            var expected = 5;
+            discParams.Angle = expected;
+            var actual = discParams.Angle;
+            Assert.AreEqual(expected, actual, 
+                "Проверка на правильные значения");
+        }
+
+        /*
         [Test(Description = "Позитивный тест геттера MainDiameter")]
         public void TestMainDiameterGet_CorrectValue()
         {
@@ -34,7 +102,7 @@ namespace Disc_Kompas.UnitTests
             Assert.AreEqual(expected, actual, "Геттер Width возвращает неправильное значение.");
         }
 
-        [Test(Description = "Негативный тест геттера Length")]
+        [Test(Description = "Негативный тест геттера Width")]
         public void TestWidthGet_BadValue()
         {
             var wrongWidth = 99999;
@@ -42,7 +110,7 @@ namespace Disc_Kompas.UnitTests
             Assert.Throws<ArgumentException>(() => { discParams.Width = wrongWidth; }, "-");
         }
 
-        [Test(Description = "Позитивный тест геттера Width")]
+        [Test(Description = "Позитивный тест геттера InsideDiameter")]
         public void TestInsideDiameterGet_CorrectValue()
         {
             var expected = 30;
@@ -112,6 +180,7 @@ namespace Disc_Kompas.UnitTests
             var wrongAngle = 99999;
             var discParams = new DiscParams(250, 69, 26, 200, 10, 4);
             Assert.Throws<ArgumentException>(() => { discParams.Angle = wrongAngle; }, "-");
-        }
+        } */
     }
 }
+

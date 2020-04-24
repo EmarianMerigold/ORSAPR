@@ -6,11 +6,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B45B9285-0577-4CB8-A15B-4608F208488C}</ProjectGuid>
+    <ProjectGuid>{F631C2E3-61FC-4C56-A274-BE6B2B1885FF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Disc.UnitTests</RootNamespace>
-    <AssemblyName>Disc.UnitTests</AssemblyName>
+    <RootNamespace>Disc_Kompas.UnitTests</RootNamespace>
+    <AssemblyName>Disc_Kompas.UnitTests</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -52,13 +52,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Disc_Kompas.Logic\Disc_Kompas.Logic.csproj">
       <Project>{069cdb54-274c-4a7b-a5eb-22c0df4662cd}</Project>
       <Name>Disc_Kompas.Logic</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
