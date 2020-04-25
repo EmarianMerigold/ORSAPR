@@ -8,10 +8,15 @@ namespace Disc_Kompas.Logic
     public class DiscParams
     {
         private int _mainDiameter;
+
         private int _width;
+
         private int _insideDiameter;
+
         private int _centralCut;
+
         private int _depthCut;
+
         private int _angle;
 
         /// <summary>

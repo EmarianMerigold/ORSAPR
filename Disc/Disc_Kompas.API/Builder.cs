@@ -12,9 +12,9 @@ namespace Disc_Kompas.API
         /// <summary>
         /// Функция, которая выполняет все элементы построения.
         /// </summary>
-        /// <param name="iPart"> интерфейс детали</param>
-        /// <param name="kompas">  объект типа kompas</param>
-        /// <param name="discparams"> класс, хранящий параметры улья</param>
+        /// <param name="iPart"> интерфейс детали </param>
+        /// <param name="kompas">  объект типа kompas </param>
+        /// <param name="discparams"> класс, хранящий параметры диска </param>
         public void Build(ksPart iPart, KompasObject kompas, DiscParams discparams)
         {
             this.iPart = iPart;
@@ -30,22 +30,20 @@ namespace Disc_Kompas.API
         /// </summary>
         public void CreateDisc(ksPart iPart, KompasObject kompas, DiscParams discParams)
         {
-            //Толщина диска
             int thickness = discParams.Width;
-            //Радиус диска
+
             int radius = discParams.MainDiameter / 2;
+
             ksEntity iSketch;
 
             ksSketchDefinition iDefinitionSketch;
 
             CreateSketch(out iSketch, out iDefinitionSketch);
 
-            // Интерфейс для рисования = на скетче;
             ksDocument2D iDocument2D = (ksDocument2D)iDefinitionSketch.BeginEdit();
 
             iDocument2D.ksCircle(0, 0, radius, 1);
 
-            // Закончить редактировать эскиз
             iDefinitionSketch.EndEdit();
 
             ExctrusionSketch(iPart, iSketch, thickness, true);
@@ -56,32 +54,30 @@ namespace Disc_Kompas.API
         /// </summary>
         private void CreateHole(ksPart iPart, KompasObject kompas, DiscParams discParams)
         {
-            // Смещение по оси Z
             double offset = discParams.Width;
-            // Радиус центрального отерстия.
+
             double radius = discParams.InsideDiameter / 2;
 
             ksEntity iSketch;
+
             ksSketchDefinition iDefinitionSketch;
 
             CreateSketch(out iSketch, out iDefinitionSketch, offset);
 
-            // Интерфейс для рисования = на скетче;
             ksDocument2D iDocument2D = (ksDocument2D)iDefinitionSketch.BeginEdit();
 
             iDocument2D.ksCircle(0, 0, radius, 1);
 
-            // Закончить редактировать эскиз
             iDefinitionSketch.EndEdit();
 
-            // Вырезание выдавливанием
             ksEntity entityCutExtr = (ksEntity)iPart.NewEntity((short)Obj3dType.o3d_cutExtrusion);
-            ksCutExtrusionDefinition cutExtrDef = (ksCutExtrusionDefinition)entityCutExtr.GetDefinition();
-            cutExtrDef.SetSketch(iSketch);    // установим эскиз операции
-            cutExtrDef.directionType = (short)Direction_Type.dtNormal; //прямое направление
+            ksCutExtrusionDefinition cutExtrDef = 
+                (ksCutExtrusionDefinition)entityCutExtr.GetDefinition();
+            cutExtrDef.SetSketch(iSketch);
+            cutExtrDef.directionType = (short)Direction_Type.dtNormal; 
             cutExtrDef.SetSideParam(true, (short)End_Type.etBlind, discParams.Width, 0, false);
             cutExtrDef.SetThinParam(false, 0, 0, 0);
-            entityCutExtr.Create(); // создадим операцию вырезание выдавливанием
+            entityCutExtr.Create();
 
         }
 
@@ -90,32 +86,31 @@ namespace Disc_Kompas.API
         /// </summary>
         private void CreateFrontCut(ksPart iPart, KompasObject kompas, DiscParams discParams)
         {
-            // Смещение по оси Z
             double offset = discParams.Width;
-            // Радиус центрального отерстия.
+
             double radius = discParams.CentralCut / 2;
 
             ksEntity iSketch;
+
             ksSketchDefinition iDefinitionSketch;
 
             CreateSketch(out iSketch, out iDefinitionSketch, offset);
 
-            // Интерфейс для рисования = на скетче;
             ksDocument2D iDocument2D = (ksDocument2D)iDefinitionSketch.BeginEdit();
 
             iDocument2D.ksCircle(0, 0, radius, 1);
 
-            // Закончить редактировать эскиз
             iDefinitionSketch.EndEdit();
 
-            // Вырезание выдавливанием
-            ksEntity entityCutExtr = (ksEntity)iPart.NewEntity((short)Obj3dType.o3d_cutExtrusion);
-            ksCutExtrusionDefinition cutExtrDef = (ksCutExtrusionDefinition)entityCutExtr.GetDefinition();
-            cutExtrDef.SetSketch(iSketch);    // установим эскиз операции
-            cutExtrDef.directionType = (short)Direction_Type.dtNormal; //прямое направление
+            ksEntity entityCutExtr = 
+                (ksEntity)iPart.NewEntity((short)Obj3dType.o3d_cutExtrusion);
+            ksCutExtrusionDefinition cutExtrDef = 
+                (ksCutExtrusionDefinition)entityCutExtr.GetDefinition();
+            cutExtrDef.SetSketch(iSketch);
+            cutExtrDef.directionType = (short)Direction_Type.dtNormal;
             cutExtrDef.SetSideParam(true, (short)End_Type.etBlind, discParams.DepthCut, 0, false);
             cutExtrDef.SetThinParam(false, 0, 0, 0);
-            entityCutExtr.Create(); // создадим операцию вырезание выдавливанием
+            entityCutExtr.Create();
 
         }
 
@@ -124,9 +119,8 @@ namespace Disc_Kompas.API
         /// </summary>
         private void CreateBackCut(ksPart iPart, KompasObject kompas, DiscParams discParams)
         {
-            // Смещение по оси Z
             double offset = discParams.DepthCut;
-            // Радиус центрального отерстия.
+
             double radius = discParams.CentralCut / 2;
 
             ksEntity iSketch;
@@ -134,22 +128,21 @@ namespace Disc_Kompas.API
 
             CreateSketch(out iSketch, out iDefinitionSketch, offset);
 
-            // Интерфейс для рисования = на скетче;
             ksDocument2D iDocument2D = (ksDocument2D)iDefinitionSketch.BeginEdit();
 
             iDocument2D.ksCircle(0, 0, radius, 1);
 
-            // Закончить редактировать эскиз
             iDefinitionSketch.EndEdit();
 
-            // Вырезание выдавливанием
-            ksEntity entityCutExtr = (ksEntity)iPart.NewEntity((short)Obj3dType.o3d_cutExtrusion);
-            ksCutExtrusionDefinition cutExtrDef = (ksCutExtrusionDefinition)entityCutExtr.GetDefinition();
-            cutExtrDef.SetSketch(iSketch);    // установим эскиз операции
-            cutExtrDef.directionType = (short)Direction_Type.dtNormal; //прямое направление
+            ksEntity entityCutExtr = 
+                (ksEntity)iPart.NewEntity((short)Obj3dType.o3d_cutExtrusion);
+            ksCutExtrusionDefinition cutExtrDef = 
+                (ksCutExtrusionDefinition)entityCutExtr.GetDefinition();
+            cutExtrDef.SetSketch(iSketch);
+            cutExtrDef.directionType = (short)Direction_Type.dtNormal;
             cutExtrDef.SetSideParam(true, (short)End_Type.etBlind, discParams.DepthCut, 0, false);
             cutExtrDef.SetThinParam(false, 0, 0, 0);
-            entityCutExtr.Create(); // создадим операцию вырезание выдавливанием
+            entityCutExtr.Create();
 
         }
 
@@ -158,19 +151,22 @@ namespace Disc_Kompas.API
         /// </summary>
         private void CreateRounding(ksPart iPart, KompasObject kompas, DiscParams discParams)
         {
-            //Угол скругления
             double radius = discParams.Angle;
 
             ksEntity entityFillet = (ksEntity)iPart.NewEntity((short)Obj3dType.o3d_fillet);
+
             ksFilletDefinition filletDef = (ksFilletDefinition)entityFillet.GetDefinition();
-            filletDef.radius = radius;      // радиус скругления
-            filletDef.tangent = false;  // продолжить по касательной
-            ksEntityCollection collect = (ksEntityCollection)iPart.EntityCollection((short)Obj3dType.o3d_face);
-            ksEntityCollection arr = (ksEntityCollection)filletDef.array();	// динамический массив объектов
+
+            filletDef.radius = radius;
+            filletDef.tangent = false;
+            ksEntityCollection collect = 
+                (ksEntityCollection)iPart.EntityCollection((short)Obj3dType.o3d_face);
+            ksEntityCollection arr = 
+                (ksEntityCollection)filletDef.array();
             arr.Add(collect.GetByIndex(2));
             arr.Add(collect.GetByIndex(0));
 
-            entityFillet.Create(); //создадим операцию скругления
+            entityFillet.Create();
         }
 
         /// <summary>
@@ -182,29 +178,25 @@ namespace Disc_Kompas.API
         private void CreateSketch(out ksEntity iSketch, out ksSketchDefinition iDefinitionSketch, double offset = 0)
         {
             #region Создание смещенную плоскость -------------------------
-            // интерфейс смещенной плоскости
-            ksEntity iPlane = (ksEntity)iPart.NewEntity((short)Obj3dType.o3d_planeOffset);
 
-            // Получаем интрефейс настроек смещенной плоскости
-            ksPlaneOffsetDefinition iPlaneDefinition = (ksPlaneOffsetDefinition)iPlane.GetDefinition();
+            ksEntity iPlane = 
+                (ksEntity)iPart.NewEntity((short)Obj3dType.o3d_planeOffset);
 
-            // Настройки : начальная позиция, направление смещения, расстояние от плоскости, принять все настройки (create)
+            ksPlaneOffsetDefinition iPlaneDefinition = 
+                (ksPlaneOffsetDefinition)iPlane.GetDefinition();
+
             iPlaneDefinition.SetPlane(iPart.GetDefaultEntity((short)Obj3dType.o3d_planeXOZ));
             iPlaneDefinition.direction = true;
             iPlaneDefinition.offset = offset;
             iPlane.Create();
             #endregion --------------------------------------------------
 
-            // Создаем обьект эскиза
             iSketch = (ksEntity)iPart.NewEntity((short)Obj3dType.o3d_sketch);
 
-            // Получаем интерфейс настроек эскиза
             iDefinitionSketch = iSketch.GetDefinition();
 
-            // Устанавливаем плоскость эскиза
             iDefinitionSketch.SetPlane(iPlane);
-
-            // Теперь когда св-ва эскиза установлены можно его создать 
+ 
             iSketch.Create();
         }
 
@@ -217,19 +209,14 @@ namespace Disc_Kompas.API
         /// <param name="direction">Направление выдавливания</param>
         private void ExctrusionSketch(ksPart iPart, ksEntity iSketch, double depth, bool direction)
         {
-            //Операция выдавливание
             ksEntity entityExtr = (ksEntity)iPart.NewEntity((short)Obj3dType.o3d_bossExtrusion);
 
-            //Интерфейс операции выдавливания
             ksBossExtrusionDefinition extrusionDef = (ksBossExtrusionDefinition)entityExtr.GetDefinition();
 
-            //Интерфейс структуры параметров выдавливания
             ksExtrusionParam extrProp = (ksExtrusionParam)extrusionDef.ExtrusionParam();
 
-            //Эскиз операции выдавливания
             extrusionDef.SetSketch(iSketch);
 
-            //Направление выдавливания
             if (direction == false)
             {
                 extrProp.direction = (short)Direction_Type.dtReverse;
@@ -239,10 +226,8 @@ namespace Disc_Kompas.API
                 extrProp.direction = (short)Direction_Type.dtNormal;
             }
 
-            //Тип выдавливания
             extrProp.typeNormal = (short)End_Type.etBlind;
 
-            //Глубина выдавливания
             if (direction == false)
             {
                 extrProp.depthReverse = depth;
@@ -251,7 +236,7 @@ namespace Disc_Kompas.API
             {
                 extrProp.depthNormal = depth;
             }
-            //Создание операции выдавливания
+
             entityExtr.Create();
         }
     }
