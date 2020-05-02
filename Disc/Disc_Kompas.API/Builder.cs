@@ -15,7 +15,7 @@ namespace Disc_Kompas.API
         /// <param name="iPart"> интерфейс детали </param>
         /// <param name="kompas">  объект типа kompas </param>
         /// <param name="discparams"> класс, хранящий параметры диска </param>
-        public void Build(ksPart iPart, KompasObject kompas, DiscParams discparams)
+        public void Build(ksPart iPart, KompasObject kompas, DiscParams discparams, bool Edge)
         {
             this.iPart = iPart;
             CreateDisc(iPart, kompas, discparams);
@@ -23,6 +23,11 @@ namespace Disc_Kompas.API
             CreateFrontCut(iPart, kompas, discparams);
             CreateBackCut(iPart, kompas, discparams);
             CreateRounding(iPart, kompas, discparams);
+
+            if (Edge)
+                CreateEdge(iPart, kompas, discparams);
+                CreateHole(iPart, kompas, discparams);
+
         }
 
         /// <summary>
@@ -169,6 +174,30 @@ namespace Disc_Kompas.API
             entityFillet.Create();
         }
 
+        /// <summary>
+        /// Функция выполняет построение основы кромки диска.
+        /// </summary>
+        public void CreateEdge(ksPart iPart, KompasObject kompas, DiscParams discParams)
+        {
+            int thickness = discParams.Width;
+
+            int radius = (discParams.InsideDiameter / 2) + 10;
+
+            ksEntity iSketch;
+
+            ksSketchDefinition iDefinitionSketch;
+
+            CreateSketch(out iSketch, out iDefinitionSketch);
+
+            ksDocument2D iDocument2D = (ksDocument2D)iDefinitionSketch.BeginEdit();
+
+            iDocument2D.ksCircle(0, 0, radius, 1);
+
+            iDefinitionSketch.EndEdit();
+
+            ExctrusionSketch(iPart, iSketch, thickness, true);
+        }
+        
         /// <summary>
         /// Создать эскиз
         /// </summary>

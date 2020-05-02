@@ -129,9 +129,15 @@ namespace Disc_Kompas.GUI
         /// </summary>
         private void BuildButton_Click(object sender, EventArgs e)
         {
+            bool Edge = false;
+
             kompasConnector = new KompasConnector(discParams);
+
+            if (EdgeCheckBox.Checked)
+            { Edge = true; }
+
             Builder builder = new Builder();
-            builder.Build(kompasConnector.iPart, kompasConnector.kompas, discParams);
+            builder.Build(kompasConnector.iPart, kompasConnector.kompas, discParams, Edge);
         }
 
         /// <summary>

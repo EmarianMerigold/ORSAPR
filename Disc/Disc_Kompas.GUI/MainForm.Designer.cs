@@ -50,7 +50,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.BuildButton = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.EdgeCheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -264,19 +267,40 @@
             // 
             // BuildButton
             // 
-            this.BuildButton.Location = new System.Drawing.Point(96, 321);
+            this.BuildButton.Location = new System.Drawing.Point(229, 328);
             this.BuildButton.Name = "BuildButton";
-            this.BuildButton.Size = new System.Drawing.Size(219, 41);
+            this.BuildButton.Size = new System.Drawing.Size(172, 43);
             this.BuildButton.TabIndex = 23;
             this.BuildButton.Text = "Построить";
             this.BuildButton.UseVisualStyleBackColor = true;
             this.BuildButton.Click += new System.EventHandler(this.BuildButton_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.EdgeCheckBox);
+            this.groupBox1.Location = new System.Drawing.Point(13, 321);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(210, 50);
+            this.groupBox1.TabIndex = 26;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Доп. возможности";
+            // 
+            // EdgeCheckBox
+            // 
+            this.EdgeCheckBox.AutoSize = true;
+            this.EdgeCheckBox.Location = new System.Drawing.Point(13, 21);
+            this.EdgeCheckBox.Name = "EdgeCheckBox";
+            this.EdgeCheckBox.Size = new System.Drawing.Size(194, 17);
+            this.EdgeCheckBox.TabIndex = 0;
+            this.EdgeCheckBox.Text = "Построить усиливающую кромку";
+            this.EdgeCheckBox.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(413, 369);
+            this.ClientSize = new System.Drawing.Size(413, 384);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.BuildButton);
@@ -287,6 +311,8 @@
             this.Text = "Построитель";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -316,6 +342,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button BuildButton;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckBox EdgeCheckBox;
     }
 }
 
