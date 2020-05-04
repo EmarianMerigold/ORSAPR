@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+using System.IO;
 using System.Windows.Forms;
 using Disc_Kompas.API;
 using Disc_Kompas.Logic;
@@ -129,15 +131,15 @@ namespace Disc_Kompas.GUI
         /// </summary>
         private void BuildButton_Click(object sender, EventArgs e)
         {
-            bool Edge = false;
+                    bool Edge = false;
 
-            kompasConnector = new KompasConnector(discParams);
+                    kompasConnector = new KompasConnector(discParams);
 
-            if (EdgeCheckBox.Checked)
-            { Edge = true; }
+                    if (EdgeCheckBox.Checked)
+                    { Edge = true; } 
 
-            Builder builder = new Builder();
-            builder.Build(kompasConnector.iPart, kompasConnector.kompas, discParams, Edge);
+                    Builder builder = new Builder();
+                    builder.Build(kompasConnector.iPart, kompasConnector.kompas, discParams, Edge);
         }
 
         /// <summary>
@@ -146,10 +148,13 @@ namespace Disc_Kompas.GUI
         private void Textbox_KeyPress(object sender, KeyPressEventArgs e)
         {
             char number = e.KeyChar;
-            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && number != 8 && number != 44) //цифры, клавиша BackSpace и запятая в ASCII
+            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && number != 8 && number != 44)
             {
                 e.Handled = true;
             }
         }
+
+
+
     }
 }

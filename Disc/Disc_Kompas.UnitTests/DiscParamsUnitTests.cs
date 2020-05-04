@@ -13,7 +13,7 @@ namespace Disc_Kompas.UnitTests
             discParams = new DiscParams(250, 69, 26, 200, 10, 4);
         }
 
-        [Test(Description = "Проерка диаметра диска")]
+        [Test(Description = "Проверка диаметра диска")]
         public void TestMainDiameterGet_CorrectValue()
         {
             var expected = 200;

@@ -9,6 +9,10 @@ namespace Disc_Kompas.API
     {
         public ksPart iPart;
 
+        ksEntity iSketch;
+
+        ksSketchDefinition iDefinitionSketch;
+
         /// <summary>
         /// Функция, которая выполняет все элементы построения.
         /// </summary>
@@ -39,10 +43,6 @@ namespace Disc_Kompas.API
 
             int radius = discParams.MainDiameter / 2;
 
-            ksEntity iSketch;
-
-            ksSketchDefinition iDefinitionSketch;
-
             CreateSketch(out iSketch, out iDefinitionSketch);
 
             ksDocument2D iDocument2D = (ksDocument2D)iDefinitionSketch.BeginEdit();
@@ -62,10 +62,6 @@ namespace Disc_Kompas.API
             double offset = discParams.Width;
 
             double radius = discParams.InsideDiameter / 2;
-
-            ksEntity iSketch;
-
-            ksSketchDefinition iDefinitionSketch;
 
             CreateSketch(out iSketch, out iDefinitionSketch, offset);
 
@@ -95,10 +91,6 @@ namespace Disc_Kompas.API
 
             double radius = discParams.CentralCut / 2;
 
-            ksEntity iSketch;
-
-            ksSketchDefinition iDefinitionSketch;
-
             CreateSketch(out iSketch, out iDefinitionSketch, offset);
 
             ksDocument2D iDocument2D = (ksDocument2D)iDefinitionSketch.BeginEdit();
@@ -127,9 +119,6 @@ namespace Disc_Kompas.API
             double offset = discParams.DepthCut;
 
             double radius = discParams.CentralCut / 2;
-
-            ksEntity iSketch;
-            ksSketchDefinition iDefinitionSketch;
 
             CreateSketch(out iSketch, out iDefinitionSketch, offset);
 
@@ -182,10 +171,6 @@ namespace Disc_Kompas.API
             int thickness = discParams.Width;
 
             int radius = (discParams.InsideDiameter / 2) + 10;
-
-            ksEntity iSketch;
-
-            ksSketchDefinition iDefinitionSketch;
 
             CreateSketch(out iSketch, out iDefinitionSketch);
 
