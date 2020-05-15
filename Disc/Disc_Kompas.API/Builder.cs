@@ -7,7 +7,7 @@ namespace Disc_Kompas.API
 {
     public class Builder
     {
-        public ksPart iPart;
+        private ksPart iPart;
 
         ksEntity iSketch;
 
@@ -35,9 +35,9 @@ namespace Disc_Kompas.API
         }
 
         /// <summary>
-        /// Функция выполняет построение основного диска.
+        /// Выполняет построение основного диска.
         /// </summary>
-        public void CreateDisc(ksPart iPart, KompasObject kompas, DiscParams discParams)
+        private void CreateDisc(ksPart iPart, KompasObject kompas, DiscParams discParams)
         {
             int thickness = discParams.Width;
 
@@ -55,7 +55,7 @@ namespace Disc_Kompas.API
         }
 
         /// <summary>
-        /// Функция создает центральное отверстие в диске
+        /// Создает центральное отверстие в диске
         /// </summary>
         private void CreateHole(ksPart iPart, KompasObject kompas, DiscParams discParams)
         {
@@ -83,7 +83,7 @@ namespace Disc_Kompas.API
         }
 
         /// <summary>
-        /// Функция создает вырез грани с лицевой стороны диска.
+        /// Создает вырез грани с лицевой стороны диска.
         /// </summary>
         private void CreateFrontCut(ksPart iPart, KompasObject kompas, DiscParams discParams)
         {
@@ -112,7 +112,7 @@ namespace Disc_Kompas.API
         }
 
         /// <summary>
-        /// Функция создает вырез грани с тыльной стороны диска.
+        /// Создает вырез грани с тыльной стороны диска.
         /// </summary>
         private void CreateBackCut(ksPart iPart, KompasObject kompas, DiscParams discParams)
         {
@@ -141,7 +141,7 @@ namespace Disc_Kompas.API
         }
 
         /// <summary>
-        /// Функция выполняет скругление рёбер диска.
+        /// Выполняет скругление рёбер диска.
         /// </summary>
         private void CreateRounding(ksPart iPart, KompasObject kompas, DiscParams discParams)
         {
@@ -164,9 +164,9 @@ namespace Disc_Kompas.API
         }
 
         /// <summary>
-        /// Функция выполняет построение основы кромки диска.
+        /// Выполняет построение основы кромки диска.
         /// </summary>
-        public void CreateEdge(ksPart iPart, KompasObject kompas, DiscParams discParams)
+        private void CreateEdge(ksPart iPart, KompasObject kompas, DiscParams discParams)
         {
             int thickness = discParams.Width;
 

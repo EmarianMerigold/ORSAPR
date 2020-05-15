@@ -85,7 +85,7 @@ namespace Disc_Kompas.Logic
             get => _centralCut;
             set
             {
-                if (value < 80 || value > (MainDiameter - 30))
+                if (value < 80 || value > (_mainDiameter - 30))
                 {
                     throw new ArgumentException("Значение должно находится в диапазоне от 80 до D - 30");
                 }

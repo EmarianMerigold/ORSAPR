@@ -46,6 +46,7 @@ namespace Disc_Kompas.API
             }
          
             kompas.Visible = true;
+
             kompas.ActivateControllerAPI();
 
             _doc3D = (ksDocument3D)kompas.Document3D();

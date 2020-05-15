@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Diagnostics;
-using System.IO;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using Disc_Kompas.API;
 using Disc_Kompas.Logic;
@@ -18,7 +17,7 @@ namespace Disc_Kompas.GUI
             AutoParams();
         }
         /// <summary>
-        /// Функция, которая производит автозаполнение данных в поля.
+        /// Производит автозаполнение данных в поля.
         /// </summary>
         private void AutoParams()
         {
@@ -30,82 +29,54 @@ namespace Disc_Kompas.GUI
             AngleTextBox.Text = "4";
         }
         /// <summary>
-        /// Функция проверяет правильность введенных данных в поля, если же все данные верны то присваивает значения.
+        /// Проверяет правильность введенных данных в поля, если же все данные верны то присваивает значения.
         /// </summary>
         private void Validator()
         {
             WarningLabel.Visible = true;
             BuildButton.Enabled = false;
-            // Переменная, которая ведет подсчёт правильно заполненых полей.
-            int rightToken = 0;
-            if ((MainDiameterTextBox.Text == "") || Int32.Parse(MainDiameterTextBox.Text) < 137 || Int32.Parse(MainDiameterTextBox.Text) > 251)
+
+            List<TextBox> TextBoxList = new List<TextBox>();
+
+            TextBoxList.AddRange(new TextBox[]
             {
-                MainDiameterTextBox.BackColor = System.Drawing.Color.Red;
-            }
-            else
+              MainDiameterTextBox,
+              WidthTextBox,
+              InsideDiameterTextBox,
+              CentralCutTextBox,
+              DepthCutTextBox,
+              AngleTextBox
+            });
+
+            List<Int32> MinInputList = new List<Int32>();
+            MinInputList.AddRange(new Int32[] { 137, 26, 26, 80, 5, 1});
+            List<Int32> MaxInputList = new List<Int32>();
+            MaxInputList.AddRange(new Int32[] { 251, 69, 31, 221, 10, 10});
+            int i = 0;
+            for (i = 0; i != 6; i++)
+
             {
-                MainDiameterTextBox.BackColor = System.Drawing.Color.Green;
-                rightToken++;
+                if ((TextBoxList[i].Text == "") || Int32.Parse(TextBoxList[i].Text) < MinInputList[i] ||
+                    Int32.Parse(TextBoxList[i].Text) > MaxInputList[i] || TextBoxList[i].Text.Length > 6)
+                {
+                    TextBoxList[i].BackColor = System.Drawing.Color.Red;
+                    WarningLabel.Visible = true;
+                    break;
+                }
+                else
+                {
+                    TextBoxList[i].BackColor = System.Drawing.Color.Green;
+                    WarningLabel.Visible = false;
+                }
             }
 
-            if ((WidthTextBox.Text == "") || Int32.Parse(WidthTextBox.Text) < 26 || (Int32.Parse(WidthTextBox.Text)) > 69)
-            {
-                WidthTextBox.BackColor = System.Drawing.Color.Red;
-            }
-            else
-            {
-                WidthTextBox.BackColor = System.Drawing.Color.Green;
-                rightToken++;
-            }
-
-            if ((InsideDiameterTextBox.Text == "") || Int32.Parse(InsideDiameterTextBox.Text) < 26 || (Int32.Parse(InsideDiameterTextBox.Text)) > 31)
-            {
-                InsideDiameterTextBox.BackColor = System.Drawing.Color.Red;
-            }
-            else
-            {
-                InsideDiameterTextBox.BackColor = System.Drawing.Color.Green;
-                rightToken++;
-            }
-
-            if ((CentralCutTextBox.Text == "") || Int32.Parse(CentralCutTextBox.Text) < 80)
-            {
-                CentralCutTextBox.BackColor = System.Drawing.Color.Red;
-            }
-            else
-            {
-                CentralCutTextBox.BackColor = System.Drawing.Color.Green;
-                rightToken++;
-            }
-
-            if ((DepthCutTextBox.Text == "") || Int32.Parse(DepthCutTextBox.Text) < 5 || (Int32.Parse(DepthCutTextBox.Text)) > 10)
-            {
-                DepthCutTextBox.BackColor = System.Drawing.Color.Red;
-            }
-            else
-            {
-                DepthCutTextBox.BackColor = System.Drawing.Color.Green;
-                rightToken++;
-            }
-
-            if ((AngleTextBox.Text == "") || Int32.Parse(AngleTextBox.Text) < 1 || (Int32.Parse(AngleTextBox.Text)) > 10)
-            {
-                AngleTextBox.BackColor = System.Drawing.Color.Red;
-            }
-            else
-            {
-                AngleTextBox.BackColor = System.Drawing.Color.Green;
-                rightToken++;
-            }
-
-            if (rightToken == 6)
+            if (i == 6)
             {
                 if ((Int32.Parse(CentralCutTextBox.Text) + 30) > Int32.Parse(MainDiameterTextBox.Text) || Int32.Parse(CentralCutTextBox.Text) > Int32.Parse(MainDiameterTextBox.Text))
                 {
                     WarningLabel.Visible = true;
                     WarningLabel.Text = "Центральный вырез не соответствует условию D - 30";
                     CentralCutTextBox.BackColor = System.Drawing.Color.Red;
-                    rightToken = 0;
                 }
                 else
                 {
@@ -119,7 +90,7 @@ namespace Disc_Kompas.GUI
         }
 
         /// <summary>
-        /// Функция, которая является обработчиком события(срабатывает при изменение значения  в текстовом поле).
+        /// Обработчик события(срабатывает при изменение значения  в текстовом поле).
         /// </summary>
         private void TextBox_TextChanged(object sender, EventArgs e)
         {
@@ -131,19 +102,18 @@ namespace Disc_Kompas.GUI
         /// </summary>
         private void BuildButton_Click(object sender, EventArgs e)
         {
-                    bool Edge = false;
+            bool Edge = false;
 
-                    kompasConnector = new KompasConnector(discParams);
+            if (EdgeCheckBox.Checked)
+            { Edge = true; }
 
-                    if (EdgeCheckBox.Checked)
-                    { Edge = true; } 
-
-                    Builder builder = new Builder();
-                    builder.Build(kompasConnector.iPart, kompasConnector.kompas, discParams, Edge);
+            kompasConnector = new KompasConnector(discParams);
+            Builder builder = new Builder();
+            builder.Build(kompasConnector.iPart, kompasConnector.kompas, discParams, Edge);  
         }
 
         /// <summary>
-        /// Обработчик, который ограничивает ввод символов в поля.
+        /// Обработчик, ограничивает ввод символов в поля.
         /// </summary>
         private void Textbox_KeyPress(object sender, KeyPressEventArgs e)
         {
