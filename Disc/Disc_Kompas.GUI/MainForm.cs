@@ -123,8 +123,5 @@ namespace Disc_Kompas.GUI
                 e.Handled = true;
             }
         }
-
-
-
     }
 }
